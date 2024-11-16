@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://c18tbf1nd4e2s"]
+
+[ext_resource type="Texture2D" uid="uid://ci8jhtxpbl7ex" path="res://Art/UI/Flower1.png" id="1_trhwv"]
+[ext_resource type="Texture2D" uid="uid://o12wubqni38p" path="res://Art/UI/Flower2.png" id="2_iguj7"]
+[ext_resource type="Texture2D" uid="uid://dqr53s0schjss" path="res://Art/UI/Flower3.png" id="3_x750s"]
+[ext_resource type="Texture2D" uid="uid://bnrtjpf7xvtk" path="res://Art/UI/Flower4.png" id="4_su2qc"]
+
+[node name="Flower" type="Node2D"]
+
+[node name="TextureRect1" type="TextureRect" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -155.0
+offset_right = 154.0
+grow_vertical = 0
+texture = ExtResource("1_trhwv")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_right = 154.0
+offset_bottom = 155.0
+texture = ExtResource("2_iguj7")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -154.0
+offset_bottom = 155.0
+grow_horizontal = 0
+texture = ExtResource("3_x750s")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -155.0
+offset_top = -155.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_su2qc")

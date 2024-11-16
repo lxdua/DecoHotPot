@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6oyxxs4k7tdf"]
+
+[ext_resource type="Script" path="res://Scene/Quest/quest_check_box.gd" id="1_06nrq"]
+[ext_resource type="Texture2D" uid="uid://omiokkiboru5" path="res://Art/UI/Quest/checkframe.png" id="1_b4odj"]
+[ext_resource type="Texture2D" uid="uid://ixa5xvnxw6xy" path="res://Art/UI/Quest/checkmark.png" id="2_06nrq"]
+
+[sub_resource type="Theme" id="Theme_ym843"]
+
+[node name="QuestCheckBox" type="HBoxContainer"]
+offset_right = 643.0
+offset_bottom = 69.0
+theme = SubResource("Theme_ym843")
+theme_override_constants/separation = 20
+script = ExtResource("1_06nrq")
+
+[node name="CheckFrame" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_b4odj")
+stretch_mode = 5
+
+[node name="Checkmark" type="TextureRect" parent="CheckFrame"]
+layout_mode = 2
+offset_right = 82.0
+offset_bottom = 61.0
+texture = ExtResource("2_06nrq")
+stretch_mode = 5
+
+[node name="QuestLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(557, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "114514"
+autowrap_mode = 3

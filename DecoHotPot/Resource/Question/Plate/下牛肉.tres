@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Question" load_steps=8 format=3 uid="uid://dqubbpnyv4sdf"]
+
+[ext_resource type="Script" path="res://Class/Question/question.gd" id="1_lg8aa"]
+[ext_resource type="Script" path="res://Class/Question/option.gd" id="2_x6k1j"]
+[ext_resource type="Script" path="res://Class/Influence/influence.gd" id="3_x6k1j"]
+
+[sub_resource type="Resource" id="Resource_26ms3"]
+script = ExtResource("3_x6k1j")
+target = "power"
+type = 0
+value = -10
+metadata/_custom_type_script = ExtResource("3_x6k1j")
+
+[sub_resource type="Resource" id="Resource_cc066"]
+script = ExtResource("2_x6k1j")
+option_content = "下锅！"
+influence_list = Array[ExtResource("3_x6k1j")]([SubResource("Resource_26ms3")])
+metadata/_custom_type_script = ExtResource("2_x6k1j")
+
+[sub_resource type="Resource" id="Resource_x6k1j"]
+script = ExtResource("3_x6k1j")
+target = "power"
+type = 0
+value = 5
+metadata/_custom_type_script = ExtResource("3_x6k1j")
+
+[sub_resource type="Resource" id="Resource_rf8dp"]
+script = ExtResource("2_x6k1j")
+option_content = "先不拿"
+influence_list = Array[ExtResource("3_x6k1j")]([SubResource("Resource_x6k1j")])
+metadata/_custom_type_script = ExtResource("2_x6k1j")
+
+[resource]
+script = ExtResource("1_lg8aa")
+question_content = "传送带送来一份牛肉"
+option_list = Array[ExtResource("2_x6k1j")]([SubResource("Resource_cc066"), SubResource("Resource_rf8dp")])
+metadata/_custom_type_script = ExtResource("1_lg8aa")

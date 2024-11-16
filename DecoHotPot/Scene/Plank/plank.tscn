@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://blg6u7obuf7p0"]
+
+[ext_resource type="Texture2D" uid="uid://blxj5unk73jcb" path="res://Art/UI/Plank/plank.png" id="1_o1dqu"]
+[ext_resource type="Script" path="res://Scene/Plank/plank.gd" id="2_a7fni"]
+[ext_resource type="Texture2D" uid="uid://x3mtp65pst6s" path="res://Art/UI/Plank/calendar3.png" id="2_h83nu"]
+[ext_resource type="Texture2D" uid="uid://dafbvksxgo58j" path="res://Art/UI/Plank/calendar2.png" id="2_pa2ka"]
+[ext_resource type="Texture2D" uid="uid://bl7mmfywrk0xv" path="res://Art/UI/Plank/decor1.png" id="3_iqe8b"]
+[ext_resource type="Texture2D" uid="uid://opc86bgmcd8k" path="res://Art/UI/Plank/calendar1.png" id="3_pa2ka"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_45ir7"]
+texture = ExtResource("3_iqe8b")
+texture_margin_left = 50.0
+texture_margin_top = 50.0
+texture_margin_right = 50.0
+texture_margin_bottom = 50.0
+
+[node name="Plank" type="TextureRect"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -457.0
+offset_right = 457.0
+offset_bottom = 1390.0
+grow_horizontal = 2
+texture = ExtResource("1_o1dqu")
+script = ExtResource("2_a7fni")
+
+[node name="Calendar" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -399.0
+offset_top = 30.0
+offset_right = 399.0
+offset_bottom = 1338.0
+grow_horizontal = 2
+texture = ExtResource("2_pa2ka")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Calendar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer1" type="MarginContainer" parent="Calendar/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="PanelContainer" parent="Calendar/VBoxContainer/MarginContainer1"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_45ir7")
+
+[node name="QuestionLabel" type="Label" parent="Calendar/VBoxContainer/MarginContainer1/TextureRect"]
+custom_minimum_size = Vector2(598, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "传送带送来一份牛肉"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="Calendar/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 100
+
+[node name="ButtonContainer" type="HBoxContainer" parent="Calendar/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Calendar2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 49.0
+offset_right = 400.0
+offset_bottom = 158.0
+grow_horizontal = 2
+texture = ExtResource("2_h83nu")
+
+[node name="Calendar3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -401.0
+offset_top = 30.0
+offset_right = 401.0
+offset_bottom = 109.0
+grow_horizontal = 2
+texture = ExtResource("3_pa2ka")

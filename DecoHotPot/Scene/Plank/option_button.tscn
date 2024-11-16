@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctgq5j0ii2e1o"]
+
+[ext_resource type="Texture2D" uid="uid://dbh6jplv3k5n8" path="res://Art/UI/Button/Button.png" id="1_plb6y"]
+[ext_resource type="Texture2D" uid="uid://crmytkwsyo613" path="res://Art/UI/Button/ButtonOff.png" id="2_50ibh"]
+[ext_resource type="Script" path="res://Scene/Plank/option_button.gd" id="3_50ibh"]
+
+[node name="OptionButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_plb6y")
+texture_disabled = ExtResource("2_50ibh")
+script = ExtResource("3_50ibh")
+
+[node name="OptionContentLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "114"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

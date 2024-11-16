@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Question" load_steps=3 format=3 uid="uid://dc8khj2vgiagc"]
+
+[ext_resource type="Script" path="res://Class/Question/question.gd" id="1_c3j8k"]
+[ext_resource type="Script" path="res://Class/Question/option.gd" id="2_vokrf"]
+
+[resource]
+script = ExtResource("1_c3j8k")
+question_content = ""
+option_list = Array[ExtResource("2_vokrf")]([])
+metadata/_custom_type_script = ExtResource("1_c3j8k")
