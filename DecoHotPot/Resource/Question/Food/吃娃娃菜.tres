@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="Question" load_steps=13 format=3 uid="uid://d3u42bib8wofp"]
+
+[ext_resource type="Script" path="res://Class/Question/question.gd" id="1_2n5v6"]
+[ext_resource type="Script" path="res://Class/Question/option.gd" id="2_jrt7q"]
+[ext_resource type="Script" path="res://Class/Influence/influence.gd" id="3_otoiq"]
+[ext_resource type="Script" path="res://Class/Influence/change_value.gd" id="4_mw3rh"]
+
+[sub_resource type="Resource" id="Resource_ldq48"]
+script = ExtResource("4_mw3rh")
+target = 0
+type = 0
+value = -3
+metadata/_custom_type_script = ExtResource("4_mw3rh")
+
+[sub_resource type="Resource" id="Resource_n56x7"]
+script = ExtResource("4_mw3rh")
+target = 1
+type = 0
+value = 4
+metadata/_custom_type_script = ExtResource("4_mw3rh")
+
+[sub_resource type="Resource" id="Resource_iig5s"]
+script = ExtResource("4_mw3rh")
+target = 2
+type = 0
+value = 3
+metadata/_custom_type_script = ExtResource("4_mw3rh")
+
+[sub_resource type="Resource" id="Resource_3f0v8"]
+script = ExtResource("2_jrt7q")
+option_content = "吃掉"
+influence_list = Array[ExtResource("3_otoiq")]([SubResource("Resource_ldq48"), SubResource("Resource_n56x7"), SubResource("Resource_iig5s")])
+metadata/_custom_type_script = ExtResource("2_jrt7q")
+
+[sub_resource type="Resource" id="Resource_gariv"]
+script = ExtResource("4_mw3rh")
+target = 0
+type = 0
+value = 10
+metadata/_custom_type_script = ExtResource("4_mw3rh")
+
+[sub_resource type="Resource" id="Resource_7g4qo"]
+script = ExtResource("4_mw3rh")
+target = 2
+type = 0
+value = -5
+metadata/_custom_type_script = ExtResource("4_mw3rh")
+
+[sub_resource type="Resource" id="Resource_cc066"]
+script = ExtResource("4_mw3rh")
+target = 1
+type = 0
+value = -1
+metadata/_custom_type_script = ExtResource("4_mw3rh")
+
+[sub_resource type="Resource" id="Resource_4toeu"]
+script = ExtResource("2_jrt7q")
+option_content = "先不吃"
+influence_list = Array[ExtResource("3_otoiq")]([SubResource("Resource_gariv"), SubResource("Resource_7g4qo"), SubResource("Resource_cc066")])
+metadata/_custom_type_script = ExtResource("2_jrt7q")
+
+[resource]
+script = ExtResource("1_2n5v6")
+question_content = "娃娃菜熟了"
+option_list = Array[ExtResource("2_jrt7q")]([SubResource("Resource_3f0v8"), SubResource("Resource_4toeu")])
+metadata/_custom_type_script = ExtResource("1_2n5v6")

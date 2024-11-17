@@ -48,31 +48,36 @@ func _ready() -> void:
 	start_game()
 
 func run_influence(influence: Influence):
-	match influence.target:
-		"power":
-			match influence.type:
-				Influence.InfluenceType.ADD:
-					current_power += influence.value
-				Influence.InfluenceType.MULTIPLY_FROM_CURRENT:
-					current_power += influence.value / 100.0 * current_power
-				Influence.InfluenceType.MULTIPLY_FROM_MAX:
-					current_power += influence.value / 100.0 * max_power
-		"spicy":
-			match influence.type:
-				Influence.InfluenceType.ADD:
-					current_spicy += influence.value
-				Influence.InfluenceType.MULTIPLY_FROM_CURRENT:
-					current_spicy += influence.value / 100.0 * current_spicy
-				Influence.InfluenceType.MULTIPLY_FROM_MAX:
-					current_spicy += influence.value / 100.0 * max_spicy
-		"satiety":
-			match influence.type:
-				Influence.InfluenceType.ADD:
-					current_satiety += influence.value
-				Influence.InfluenceType.MULTIPLY_FROM_CURRENT:
-					current_satiety += influence.value / 100.0 * current_satiety
-				Influence.InfluenceType.MULTIPLY_FROM_MAX:
-					current_satiety += influence.value / 100.0 * max_satiety
+	if influence is ChangeValue:
+		match influence.target:
+			ChangeValue.Target.POWER:
+				match influence.type:
+					ChangeValue.Type.ADD:
+						current_power += influence.value
+					ChangeValue.Type.MULTIPLY_FROM_CURRENT:
+						current_power += influence.value / 100.0 * current_power
+					ChangeValue.Type.MULTIPLY_FROM_MAX:
+						current_power += influence.value / 100.0 * max_power
+			ChangeValue.Target.SCIPY:
+				match influence.type:
+					ChangeValue.Type.ADD:
+						current_spicy += influence.value
+					ChangeValue.Type.MULTIPLY_FROM_CURRENT:
+						current_spicy += influence.value / 100.0 * current_spicy
+					ChangeValue.Type.MULTIPLY_FROM_MAX:
+						current_spicy += influence.value / 100.0 * max_spicy
+			ChangeValue.Target.SATIETY:
+				match influence.type:
+					ChangeValue.Type.ADD:
+						current_satiety += influence.value
+					ChangeValue.Type.MULTIPLY_FROM_CURRENT:
+						current_satiety += influence.value / 100.0 * current_satiety
+					ChangeValue.Type.MULTIPLY_FROM_MAX:
+						current_satiety += influence.value / 100.0 * max_satiety
+	elif influence is AddQuestion:
+		for question: Question in influence.question_dict:
+			plank.add_question(question, influence.question_dict[question])
+			prints("加入了", question, influence.question_dict[question], "个")
 
 func initialize_data():
 	max_power = 100
@@ -83,4 +88,4 @@ func initialize_data():
 	current_spicy = 0
 
 func start_game():
-	plank.update_question()
+	pass

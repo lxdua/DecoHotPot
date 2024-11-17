@@ -1,6 +1,6 @@
 extends TextureButton
 
-var option: Option
+@export var option: Option
 
 @onready var option_content_label: Label = $OptionContentLabel
 

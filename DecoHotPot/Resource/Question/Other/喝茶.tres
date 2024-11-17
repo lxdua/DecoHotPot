@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Question" load_steps=10 format=3 uid="uid://bf0cegini6gx1"]
+
+[ext_resource type="Script" path="res://Class/Question/question.gd" id="1_jqej6"]
+[ext_resource type="Script" path="res://Class/Question/option.gd" id="2_ffxn6"]
+[ext_resource type="Script" path="res://Class/Influence/influence.gd" id="3_vrwce"]
+[ext_resource type="Script" path="res://Class/Influence/change_value.gd" id="4_cd80w"]
+
+[sub_resource type="Resource" id="Resource_hjc5x"]
+script = ExtResource("4_cd80w")
+target = 2
+type = 0
+value = -15
+metadata/_custom_type_script = ExtResource("4_cd80w")
+
+[sub_resource type="Resource" id="Resource_5hduk"]
+script = ExtResource("4_cd80w")
+target = 1
+type = 1
+value = -50
+metadata/_custom_type_script = ExtResource("4_cd80w")
+
+[sub_resource type="Resource" id="Resource_ugha2"]
+script = ExtResource("2_ffxn6")
+option_content = "喝"
+influence_list = Array[ExtResource("3_vrwce")]([SubResource("Resource_hjc5x"), SubResource("Resource_5hduk")])
+metadata/_custom_type_script = ExtResource("2_ffxn6")
+
+[sub_resource type="Resource" id="Resource_ebl7x"]
+script = ExtResource("4_cd80w")
+target = 0
+type = 0
+value = 5
+metadata/_custom_type_script = ExtResource("4_cd80w")
+
+[sub_resource type="Resource" id="Resource_gidlm"]
+script = ExtResource("2_ffxn6")
+option_content = "先不喝"
+influence_list = Array[ExtResource("3_vrwce")]([SubResource("Resource_ebl7x")])
+metadata/_custom_type_script = ExtResource("2_ffxn6")
+
+[resource]
+script = ExtResource("1_jqej6")
+question_content = "要喝茶吗"
+option_list = Array[ExtResource("2_ffxn6")]([SubResource("Resource_ugha2"), SubResource("Resource_gidlm")])
+metadata/_custom_type_script = ExtResource("1_jqej6")

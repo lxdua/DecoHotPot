@@ -1,51 +1,66 @@
-[gd_resource type="Resource" script_class="Question" load_steps=10 format=3 uid="uid://clsp8gjeonad4"]
+[gd_resource type="Resource" script_class="Question" load_steps=13 format=3 uid="uid://8rj53g7hb1gf"]
 
 [ext_resource type="Script" path="res://Class/Question/question.gd" id="1_7n423"]
 [ext_resource type="Script" path="res://Class/Question/option.gd" id="2_33okh"]
 [ext_resource type="Script" path="res://Class/Influence/influence.gd" id="3_33okh"]
-
-[sub_resource type="Resource" id="Resource_dusyj"]
-script = ExtResource("3_33okh")
-target = "power"
-type = 0
-value = -7
-metadata/_custom_type_script = ExtResource("3_33okh")
+[ext_resource type="Script" path="res://Class/Influence/change_value.gd" id="4_dusyj"]
 
 [sub_resource type="Resource" id="Resource_ameo5"]
-script = ExtResource("3_33okh")
-target = "spicy"
+script = ExtResource("4_dusyj")
+target = 0
 type = 0
-value = 3
-metadata/_custom_type_script = ExtResource("3_33okh")
+value = -5
+metadata/_custom_type_script = ExtResource("4_dusyj")
 
 [sub_resource type="Resource" id="Resource_sju1n"]
-script = ExtResource("3_33okh")
-target = "satiety"
+script = ExtResource("4_dusyj")
+target = 1
 type = 0
-value = 8
-metadata/_custom_type_script = ExtResource("3_33okh")
+value = 4
+metadata/_custom_type_script = ExtResource("4_dusyj")
 
 [sub_resource type="Resource" id="Resource_lx1l0"]
-script = ExtResource("2_33okh")
-option_content = "吃掉"
-influence_list = Array[ExtResource("3_33okh")]([SubResource("Resource_dusyj"), SubResource("Resource_ameo5"), SubResource("Resource_sju1n")])
-metadata/_custom_type_script = ExtResource("2_33okh")
+script = ExtResource("4_dusyj")
+target = 2
+type = 0
+value = 6
+metadata/_custom_type_script = ExtResource("4_dusyj")
 
 [sub_resource type="Resource" id="Resource_8d0xt"]
-script = ExtResource("3_33okh")
-target = "power"
+script = ExtResource("2_33okh")
+option_content = "现在吃"
+influence_list = Array[ExtResource("3_33okh")]([SubResource("Resource_ameo5"), SubResource("Resource_sju1n"), SubResource("Resource_lx1l0")])
+metadata/_custom_type_script = ExtResource("2_33okh")
+
+[sub_resource type="Resource" id="Resource_gariv"]
+script = ExtResource("4_dusyj")
+target = 0
 type = 0
-value = 5
-metadata/_custom_type_script = ExtResource("3_33okh")
+value = 10
+metadata/_custom_type_script = ExtResource("4_dusyj")
+
+[sub_resource type="Resource" id="Resource_7g4qo"]
+script = ExtResource("4_dusyj")
+target = 2
+type = 0
+value = -5
+metadata/_custom_type_script = ExtResource("4_dusyj")
+
+[sub_resource type="Resource" id="Resource_cc066"]
+script = ExtResource("4_dusyj")
+target = 1
+type = 0
+value = -1
+metadata/_custom_type_script = ExtResource("4_dusyj")
 
 [sub_resource type="Resource" id="Resource_cmhgl"]
 script = ExtResource("2_33okh")
 option_content = "先不吃"
-influence_list = Array[ExtResource("3_33okh")]([SubResource("Resource_8d0xt")])
+influence_list = Array[ExtResource("3_33okh")]([SubResource("Resource_gariv"), SubResource("Resource_7g4qo"), SubResource("Resource_cc066")])
 metadata/_custom_type_script = ExtResource("2_33okh")
 
 [resource]
 script = ExtResource("1_7n423")
-question_content = "牛肉已经熟了"
-option_list = Array[ExtResource("2_33okh")]([SubResource("Resource_lx1l0"), SubResource("Resource_cmhgl")])
+question_content = "牛肉煮熟了"
+option_list = Array[ExtResource("2_33okh")]([SubResource("Resource_8d0xt"), SubResource("Resource_cmhgl")])
 metadata/_custom_type_script = ExtResource("1_7n423")

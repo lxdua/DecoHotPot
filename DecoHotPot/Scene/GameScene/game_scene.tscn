@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctthxpghnuc2g"]
+[gd_scene load_steps=11 format=3 uid="uid://ctthxpghnuc2g"]
 
 [ext_resource type="Texture2D" uid="uid://4btdoi20l4sl" path="res://Art/BG/abg.png" id="1_om0tc"]
 [ext_resource type="PackedScene" uid="uid://blg6u7obuf7p0" path="res://Scene/Plank/plank.tscn" id="2_i7knv"]
@@ -6,9 +6,10 @@
 [ext_resource type="Script" path="res://Class/Question/question.gd" id="4_41sm2"]
 [ext_resource type="PackedScene" uid="uid://e0wsojxw8222" path="res://Scene/ValueContainer/value_container.tscn" id="4_wfbee"]
 [ext_resource type="PackedScene" uid="uid://bq6neni52i0rc" path="res://Scene/Quest/quest_container.tscn" id="5_05km6"]
-[ext_resource type="Resource" uid="uid://dqubbpnyv4sdf" path="res://Resource/Question/Plate/下牛肉.tres" id="5_gdlbp"]
-[ext_resource type="Resource" uid="uid://clsp8gjeonad4" path="res://Resource/Question/Food/吃牛肉.tres" id="6_sty7j"]
+[ext_resource type="Resource" uid="uid://b7sfo6ga47n5n" path="res://Resource/Question/Plate/下牛肉.tres" id="5_gdlbp"]
 [ext_resource type="PackedScene" uid="uid://c01vtfkobcbo2" path="res://Scene/GameScene/Manager/game_manager.tscn" id="7_ltnr7"]
+[ext_resource type="Resource" uid="uid://bf0cegini6gx1" path="res://Resource/Question/Other/喝茶.tres" id="8_41sm2"]
+[ext_resource type="Resource" uid="uid://bc2ktkwkf1hjs" path="res://Resource/Question/Plate/下娃娃菜.tres" id="9_gdlbp"]
 
 [node name="GameScene" type="Control"]
 layout_mode = 3
@@ -43,7 +44,7 @@ offset_right = 789.0
 
 [node name="Plank" parent="." instance=ExtResource("2_i7knv")]
 layout_mode = 1
-question_pool = Array[ExtResource("4_41sm2")]([ExtResource("5_gdlbp"), ExtResource("5_gdlbp"), ExtResource("6_sty7j")])
+question_pool = Array[ExtResource("4_41sm2")]([ExtResource("5_gdlbp"), ExtResource("8_41sm2"), ExtResource("9_gdlbp")])
 
 [node name="GameManager" parent="." node_paths=PackedStringArray("quest_container", "value_container", "plank") instance=ExtResource("7_ltnr7")]
 quest_container = NodePath("../QuestContainer")
